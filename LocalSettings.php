@@ -128,6 +128,27 @@ wfLoadSkin( 'Vector' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+
 # Prevent new user registrations except by sysops
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
+
+
+# https://www.mediawiki.org/wiki/Help:Subpages
+# Enable subpages in the main namespace
+$wgNamespacesWithSubpages[NS_MAIN] = true;
+# Enable subpages in the template namespace
+$wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+
+
+## Visual Editor
+#wfLoadExtension( 'VisualEditor' );
+// Enable by default for everybody
+#$wgDefaultUserOptions['visualeditor-enable'] = 1;
+// Optional: Set VisualEditor as the default for anonymous users
+// otherwise they will have to switch to VE
+// $wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
+// Don't allow users to disable it
+#$wgHiddenPrefs[] = 'visualeditor-enable';
+// OPTIONAL: Enable VisualEditor's experimental code features
+#$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
