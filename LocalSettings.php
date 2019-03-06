@@ -141,6 +141,13 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
 
 
+# https://www.mediawiki.org/wiki/Extension:HeadScript
+require_once "$IP/extensions/HeadScript/HeadScript.php";
+$wgHeadScriptCode = <<<'START_END_MARKER'
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135772211-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-135772211-1');</script>
+START_END_MARKER;
+
 ## Visual Editor
 #wfLoadExtension( 'VisualEditor' );
 // Enable by default for everybody
